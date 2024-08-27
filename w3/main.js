@@ -25,3 +25,22 @@ const numberInhousehold = 3;
 
 determineHouseHoldPts(3);
 determineHouseHoldPts(4);
+
+//To construct this new function, I used the previous function from our carbon challenge, and replaced them with this weeks challenge
+
+let houseNumber = 0;
+
+function determineHs(houseSize) {
+  if (houseSize === "large") {
+    houseNumber = houseNumber + 10;
+  } else if (houseSize === "medium") {
+    houseNumber = houseNumber + 7;
+  } else if (houseSize === "small") {
+    houseNumber = houseNumber + 4;
+  }else if (houseSize === "apartment") {
+    houseNumber = houseNumber + 2;
+  }
+  console.log(`Based solely on the size of your house: ${houseSize}, the amount of point from this is ${houseNumber}.`)
+}
+
+determineHs("large")
