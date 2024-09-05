@@ -28,7 +28,14 @@ function determineHouseHoldPts(numberInhousehold) {
   }
   
   function displayOutput() {
-
+    for(arr of cfpData){
+        console.log(arr)
+        const output = document.getElementById("output");
+        const newP = document.createElement("p");
+        newP.textContent = `Your household consists of ${arr[0]} people, your score is ${arr[2]}. The size of your household is ${arr[1]}, the score is ${arr[3]}. 
+        The data that has been provided will update the overall score to ${arr[4]}. `;
+        output.appendChild(newP)
+    }
   }
 
   start(5, "apartment");
@@ -36,7 +43,7 @@ function determineHouseHoldPts(numberInhousehold) {
   start(3, "medium");
   start(2, "small");
 
-  displayOutput()
+displayOutput()
 
   let houseNumber = 0;
   
