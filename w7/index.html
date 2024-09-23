@@ -7,18 +7,17 @@
     <title>Week 7 - Carbon Foorprint - pri</title>
     <link rel="stylesheet" href="style.css">
   </head>
-
   <body>
     <form id="form">
       <fieldset>
         <legend>Calculating Your Carbon Footprint </legend>
         <div>
             <label>First Name:</label>
-            <input type="text" name="firstname" maxlength="20" required/>
+            <input type="text" name="firstName" maxlength="20" required/>
         </div>
         <div>
             <label>Last Name:</label>
-            <input type="text" name="lastname" maxlength="20" required/>
+            <input type="text" name="lastName" maxlength="20" required/>
         </div>
         <div>
           <label>Count the members of your household:</label>
@@ -26,7 +25,6 @@
       </div>
       <div>
         <label>Consider the size of your home:</label>
-        <!-- <input type="text" name="houseSize" required/> -->
         <select name="houses" required>
           <option value="">--Please enter size of home---</option>
           <option value="Apartment">Apartment</option>
@@ -40,28 +38,5 @@
     </form>
     <div id="output"></div>
     <div id="tab-data"></div>
-    <!-- <table>
-        <thead>
-            <tr>
-                <th>Name</th>
-                <th>HouseHold</th>
-                <th>House Size</th>
-                <th>Carbon Footprint</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>Erick</td>
-                <td>3</td>
-                <td>Large</td>
-                <td>20</td>
-                <td>
-                    <button>Edit</button>
-                    <button>Delete</button>
-                </td>
-            </tr>
-        </tbody>
-    </table> -->
   </body>
 </html>
