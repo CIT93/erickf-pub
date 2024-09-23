@@ -1,26 +1,9 @@
+import { renderTbl } from "./render.js";
+import { start } from "./render.js";
+
 const FORM = document.getElementById("form")
 const OUTPUT = document.getElementById("output");
 const cfpData = [];
-
-function determineHouseHoldPts(numberInhousehold) {
-    let houseHoldPoints = 0;
-    if (numberInhousehold === 0) {
-      houseHoldPoints = 14;
-    } else if (numberInhousehold === 1) {
-        houseHoldPoints = 12;
-    } else if (numberInhousehold === 2) {
-        houseHoldPoints = 10;
-    } else if (numberInhousehold === 3) {
-        houseHoldPoints = 8;
-    } else if (numberInhousehold === 4) {
-        houseHoldPoints = 6;
-    } else if (numberInhousehold === 5) {
-        houseHoldPoints = 4;
-    } else if (numberInhousehold > 5) {
-        houseHoldPoints = 2;
-    }
-    return houseHoldPoints
-  }
 
   function displayOutOb (obj) {
     console.log(obj);
@@ -29,40 +12,7 @@ function determineHouseHoldPts(numberInhousehold) {
     newH2.textContent = `Carbon Footprint ${obj.cfpTotal}`;
     output.appendChild(newH2);
   }
-
- function start (houseHoldMembers, houseSize, firstname, lastname) {
-     const houseHoldPTS = determineHouseHoldPts(houseHoldMembers);
-     const houseHoldSizePTS = determineHs(houseSize);
-     const total = houseHoldPTS + houseHoldSizePTS;
-     cfpData.push({
-         hHM: houseHoldMembers,
-        hS: houseSize,
-        hHPTS: houseHoldPTS,
-        hHSPTS: houseHoldSizePTS,
-        cfpTotal: total,
-        firstName: firstname,
-        lastName: lastname
-
-
-     });
-  }
-  
-  function displayOutput() {
-   for(obj of cfpData){
-     console.log(obj)
-     const newH2 = document.createElement("h2");
-     newH2.textContent = `Carbon Footprint ${obj.cfpTotal}`;
-     const newH3 = document.createElement("h3");
-     newH3.textContent = `Hello, ${FORM.firstname.value} ${FORM.lastname.value} Based  on number of people in home and size of home`;
-     const newP = document.createElement("p");
-     newP.textContent = `Your household consists of ${obj.hHM} people, your score is ${obj.hHPTS}. The size of your household is ${obj.hS}, the score is ${obj.hHSPTS}. 
-     The data that has been provided will update the overall score to ${obj.cfpTotal}. `;
-     OUTPUT.appendChild(newH2);
-     OUTPUT.appendChild(newH3);
-     OUTPUT.appendChild(newP);
-
-    }
-  }
+    //I do not know why the error is occuring, I have having a bit of trouble this week understanding the content
 
  //  function displayOutput() {
    // for (let i = 0; i < cfpData.length; i++) {
@@ -86,10 +36,6 @@ function determineHouseHoldPts(numberInhousehold) {
      //output.appendChild(newH2);
        // output.appendChild(newH3);
       //  output.appendChild(newP); 
- 
-
-
-
 
  FORM.addEventListener("submit", function (e) {
    e.preventDefault();
@@ -98,9 +44,9 @@ function determineHouseHoldPts(numberInhousehold) {
    const lastName = FORM.lastname.value;
    const houseHoldMembers = parseInt(FORM.houseHoldMembers.value);
    const houseSize = FORM.houses.value;
-   start(houseHoldMembers, houseSize);
    OUTPUT.innerHTML = "";
-   displayOutput();
+   //displayOutput();
+   renderTbl(cfpData);
    FORM.reset();
  });
 
