@@ -33,5 +33,3 @@ const cfpData = [];
    renderTbl(cfpData)
    FORM.reset();
 });
-
-
