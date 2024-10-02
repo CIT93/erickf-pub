@@ -1,4 +1,5 @@
 const TBL = document.getElementById("tab-data");
+const FORM = document.getElementById("form")
 
 function renderTblHeading() {
   TBL.innerHTML = "";
@@ -24,7 +25,7 @@ function renderTblHeading() {
   return table;
 }
 
-function renderTblBtn(index, data) {
+function renderTblBtn(obj, index, data) {
   const td = document.createElement("td");
   const buttonEdit = document.createElement("button");
   const buttonDel = document.createElement("button");
@@ -42,7 +43,7 @@ function renderTblBtn(index, data) {
     FORM[0].value = data[index].firstname
     FORM[1].value = data[index].hMem
     FORM[2].value = data[index].hSize
-    FORM[3].value = data[index].footprint
+    FORM[3].value = data[index].cfpTotal
     data.splice(index, 1);
   });
   return td;
@@ -62,7 +63,7 @@ function renderTblRow(data) {
         tr.appendChild(td);
       }
     }
-    const td = renderTblBtn(index, data);
+    const td = renderTblBtn(obj, index, data);
     tr.appendChild(td);
     tbody.appendChild(tr);
   });
