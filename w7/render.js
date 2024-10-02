@@ -17,7 +17,7 @@ function renderTblHeading (){
     const tbody = document.createElement("tbody");
     data.forEach(function (item) {
       const tr = document.createElement("tr");
-      const properties = [item.firstName, item.hHM, item.cfpTotal, item.lastName];
+      const properties = [item.firstName, item.lastName,item.hHM, item.cfpTotal];
       properties.forEach(function(text){
         const td = document.createElement("td")
         td.textContent = text;

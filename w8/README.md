@@ -1,0 +1,5 @@
+//I think at first, It is trying to create the output onto the DOM in which the content the user has provided will be stored (tries to create the boxes that the user will see on the site). After it steps into the renderTBL which I believe is throwing the given info into the 'boxes' in the DOM. After this step, I runs into the FORM.reset() which then resets the form for further requests. If the user is on their second input, instead of stepping into the FORM.reset() it will jump back into the renderTBL suppling the renderTblHeading with the new data.  Just a quick run down of what i think is happening.
+
+//updated understanding: I do get a basic understanding as to how this works, but you have shown me the precise ways each action is taken. From the table, heading, and rows being created to the table being pushed and data being displayed in the respective rows. I don't have any questions at the moment, If I do have any i will let you know Rio!
+
+//Idea on how to update the edit button: Maybe a way to do this is to press the edit button, repopulate the data. Upon resubmission the new data will take the previous data spot hence the edit.
