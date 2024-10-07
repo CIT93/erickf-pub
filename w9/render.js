@@ -1,5 +1,5 @@
-const TBL = document.getElementById("tab-data");
-const FORM = document.getElementById("form")
+import {FORM, TBL} from "./global.js"
+import {getLS, saveLS} from "./storage.js"
 
 function renderTblHeading() {
   TBL.innerHTML = "";
@@ -25,6 +25,13 @@ function renderTblHeading() {
   return table;
 }
 
+function onUpdate(index,data) {
+  data.splice(index, 1);
+  saveLS(data);
+  renderTbl(data);
+
+}
+
 function renderTblBtn(obj, index, data) {
   const td = document.createElement("td");
   const buttonEdit = document.createElement("button");
@@ -34,9 +41,9 @@ function renderTblBtn(obj, index, data) {
   td.appendChild(buttonEdit);
   td.appendChild(buttonDel);
   buttonDel.addEventListener("click", function (e) {
-    console.log("Hello from inside the delete button");
-    console.log(e);
+    onUpdate(index, data);
     data.splice(index, 1);
+    saveLS(data);
     renderTbl(data);
   });
   buttonEdit.addEventListener("click", function (e) {
@@ -44,14 +51,10 @@ function renderTblBtn(obj, index, data) {
     FORM[2].value = obj.lastName
     FORM[3].value = obj.hHM
     FORM[4].value = obj.hS
-    data.splice(index, 1);
-    renderTbl(data);
+    onUpdate(index, data);
   });
   return td;
 }
-//First question: Why do you add console.log(e) after the first console.log?
-//Second question: For splicing on the MDN webpage it formats it as months.splice(1, 0, feb). the '1' is the place in the array where it is put, and the '0' is the amount of replacements of an element correct?
-
 function renderTblRow(data) {
   const tbody = document.createElement("tbody");
   data.forEach(function (obj, index) {
@@ -79,6 +82,11 @@ function renderTbl(data) {
     table.appendChild(tbody);
     TBL.appendChild(table);
   }
+}
+
+function dataLS() {
+  const data = getLS()
+  renderTbl(data)
 }
 
 export { renderTbl, renderTblHeading };
