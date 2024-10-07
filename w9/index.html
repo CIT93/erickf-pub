@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script type="module" defer src="main.js"></script>
     <title>Week 9 - Carbon Footprint - pri</title>
+    <style>
+      .error{
+        color:red
+      }
+    </style>
     <link rel="stylesheet" href="style.css">
   </head>
   <body>
@@ -13,12 +18,12 @@
         <legend>Calculating Your Carbon Footprint </legend>
         <div>
             <label>First Name:</label>
-            <input type="text" name="firstName" />
+            <input type="text" id="firstName" name="firstName" />
             <span id="firstNameError" class="error" role="alert"></span>
         </div>
         <div>
             <label>Last Name:</label>
-            <input type="text" name="lastName" />
+            <input type="text" id="lastName" name="lastName" />
             <span id="lastNameError" class="error" role="alert"></span>
         </div>
         <div>

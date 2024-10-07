@@ -53,7 +53,7 @@ import {saveLS, cfpData} from "./storage.js";
    }
  };
 
- VALIDF.addEventListener('blur', validateField);
- VALIDL.addEventListener("blur", validateField);
+VALIDF.addEventListener('blur', validateField);
+VALIDL.addEventListener('blur', validateField);
 
 
