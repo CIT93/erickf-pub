@@ -3,7 +3,7 @@ const saveLS = cfpData => {
     localStorage.setItem("cfp", serializedArr);
 }
 
-const getLS = cfpData => {
+const getLS = (...cfpData) => {
     const retrievedArr = localStorage.getItem("cfp");
     if(retrievedArr !== null) {
         return JSON.parse(retrievedArr);
