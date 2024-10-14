@@ -1,4 +1,4 @@
-const determineHouseHoldPts = function(numberInhousehold) {
+const determineHouseHoldPts = numberInhousehold => {
     let houseHoldPoints = 0;
     if (numberInhousehold === 0) {
       houseHoldPoints = 14;
@@ -17,7 +17,7 @@ const determineHouseHoldPts = function(numberInhousehold) {
     }
     return houseHoldPoints
   }
-  const determineHs = function(houseSize) {
+  const determineHs = houseSize =>{
     let houseHoldSizePTS = 0;
     if (houseSize === "Large") {
         houseHoldSizePTS = 10;

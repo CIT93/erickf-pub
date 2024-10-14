@@ -1,7 +1,7 @@
-import {FORM, TBL} from "./global.js"
-import {getLS, saveLS} from "./storage.js"
+import { FORM, TBL } from "./global.js";
+import { getLS, saveLS } from "./storage.js";
 
-const renderTblHeading = function() {
+const renderTblHeading = () => {
   TBL.innerHTML = "";
   const table = document.createElement("table");
   const thead = document.createElement("thead");
@@ -23,16 +23,15 @@ const renderTblHeading = function() {
   thead.appendChild(tr);
   table.appendChild(thead);
   return table;
-}
+};
 
-const onUpdate = function(index,data) {
+const onUpdate = (index, data) => {
   data.splice(index, 1);
   saveLS(data);
   renderTbl(data);
+};
 
-}
-
-const renderTblBtn = function(obj, index, data) {
+const renderTblBtn = (obj, index, data) => {
   const td = document.createElement("td");
   const buttonEdit = document.createElement("button");
   const buttonDel = document.createElement("button");
@@ -40,23 +39,23 @@ const renderTblBtn = function(obj, index, data) {
   buttonDel.textContent = "Del";
   td.appendChild(buttonEdit);
   td.appendChild(buttonDel);
-  buttonDel.addEventListener("click", function (e) {
+  buttonDel.addEventListener("click", e => {
     onUpdate(index, data);
     data.splice(index, 1);
     saveLS(data);
     renderTbl(data);
   });
-  buttonEdit.addEventListener("click", function (e) {
-    FORM[1].value = obj.firstName
-    FORM[2].value = obj.lastName
-    FORM[3].value = obj.hHM
-    FORM[4].value = obj.hS
+  buttonEdit.addEventListener("click", e => {
+    FORM[1].value = data[index].firstName;
+    FORM[2].value = obj.lastName;
+    FORM[3].value = data[index].hHM;
+    FORM[4].value = obj.hS;
     onUpdate(index, data);
   });
   return td;
-}
+};
 
-const renderTblRow = function(data) {
+const renderTblRow = (data) => {
   const tbody = document.createElement("tbody");
   data.forEach(function (obj, index) {
     console.log(index);
@@ -73,21 +72,22 @@ const renderTblRow = function(data) {
     tbody.appendChild(tr);
   });
   return tbody;
-}
+};
 
-const renderTbl = function(data) {
+const renderTbl = (data) => {
   TBL.innerHTML = "";
-  if (data.length !== 0) { //MDN  and chat helped with this one, although I did get stuck when I put === instead -f !== the code would not run. 
+  if (data.length !== 0) {
+    //MDN  and chat helped with this one, although I did get stuck when I put === instead -f !== the code would not run.
     const table = renderTblHeading();
     const tbody = renderTblRow(data);
     table.appendChild(tbody);
     TBL.appendChild(table);
   }
-}
+};
 
-const dataLS = function() {
-  const data = getLS()
-  renderTbl(data)
-}
+const dataLS = () => {
+  const data = getLS();
+  renderTbl(data);
+};
 
 export { renderTbl, renderTblHeading };
