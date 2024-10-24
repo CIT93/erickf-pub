@@ -26,7 +26,7 @@ const renderTblHeading = function() {
   return table;
 }
 
-const onUpdate = function(index,data) {
+const onUpdate = function(index, data) {
   data.splice(index, 1);
   saveLS(data);
   renderTbl(data);
@@ -48,7 +48,7 @@ const renderTblBtn = function(obj, index, data) {
     FORM[2].value = obj.last
     FORM[3].value = data[index].houseMembers;
     FORM[4].value = obj.houseSize
-    FORM[5].value = obj.lifestyleChoice
+    FORM[5].value = data[index].lifeStyleChoice;
     onUpdate(index, data);
   });
   return td;
@@ -60,7 +60,7 @@ const renderTblRow = function(data) {
     console.log(index);
     const tr = document.createElement("tr");
     for (const [key, value] of Object.entries(obj)) {
-      if (key !== "last" && key !== "houseHoldPoints" && key !== "houseSizePoints" && key !== "lifestyleChoice") {
+      if (key === "first" || key === "houseMembers" || key === "houseSize" || key === "lifeStyleChoice" || key === "total") {
         const td = document.createElement("td");
         td.textContent = value;
         tr.appendChild(td);
