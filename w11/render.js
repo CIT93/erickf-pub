@@ -45,10 +45,10 @@ const renderTblBtn = function(obj, index, data) {
   });
   buttonEdit.addEventListener("click", function (e) {
     FORM[1].value = data[index].first;
-    FORM[2].value = obj.last
+    FORM[2].value = data[index].last;
     FORM[3].value = data[index].houseMembers;
-    FORM[4].value = obj.houseSize
-    FORM[5].value = data[index].lifeStyleChoice;
+    FORM[4].value = data[index].houseSize
+    FORM[5].value = data[index].lifestyleChoice;
     onUpdate(index, data);
   });
   return td;
@@ -60,7 +60,7 @@ const renderTblRow = function(data) {
     console.log(index);
     const tr = document.createElement("tr");
     for (const [key, value] of Object.entries(obj)) {
-      if (key === "first" || key === "houseMembers" || key === "houseSize" || key === "lifeStyleChoice" || key === "total") {
+      if (key === "first" || key === "houseMembers" || key === "houseSize" || key === "lifestyleChoice" || key === "total") {
         const td = document.createElement("td");
         td.textContent = value;
         tr.appendChild(td);

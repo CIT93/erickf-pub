@@ -1,23 +1,22 @@
 import { renderTbl } from "./render.js";
-import { determineHouseHoldPts, determineHs } from "./cfp.js";
 import { FORM, FNAME, LNAME, SUBMIT } from "./global.js";
 import { saveLS, cfpData } from "./storage.js";
 import {FP} from "./fp.js"
 
-const start = function (houseHoldMembers, houseSize) {
-  const houseHoldPTS = determineHouseHoldPts(houseHoldMembers);
-  const houseHoldSizePTS = determineHs(houseSize);
+const start = function (houseHoldMembers, houseSize, lifestyleChoice) {
+  const houseHoldPoints = houseHoldMembers;
+  const houseSizePoints = houseSize
   const lifestyleChoicePoints = lifestyleChoice
   const firstName = FORM.firstName.value;
   const lastName = FORM.lastName.value;
-  const total = houseHoldPTS + houseHoldSizePTS + lifestyleChoicePoints;
+  const total = houseHoldPoints + houseSizePoints + lifestyleChoicePoints;
   cfpData.push({
     firstName: firstName,
     lastName: lastName,
     hHM: houseHoldMembers,
     hS: houseSize,
-    hHPTS: houseHoldPTS,
-    hHSPTS: houseHoldSizePTS,
+    hHPTS: houseHoldPoints,
+    hHSPTS: housesize,
     lC: lifestyleChoice,
     lCP: lifestyleChoicePoints,
     cfpTotal: total,
