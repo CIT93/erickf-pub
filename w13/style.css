@@ -1,0 +1,49 @@
+html {
+    font-size: 32px;
+  }
+  
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 35vh; 
+    margin: 0; 
+}
+
+.form-container {
+    text-align: inline-block;
+}
+#form {
+    width: 1000px; 
+    padding: 15px;
+    box-shadow: 0 40px 80px rgba(67, 131, 83, 0.2);
+    background-color:beige; 
+    border-radius: 10px; 
+
+    body {
+    background-color: rgb(146, 91, 59);
+    color: black;
+  }
+  input:in-range {
+      background-color: rgb(144, 156, 238);
+  }
+  input:out-of-range {
+    background-color: lightcoral;
+  }
+  table, th, td {
+    border: 1px solid;
+    padding: 5px;
+  }
+  tbody tr:nth-child(odd) {
+    background-color: rgb(38, 97, 38);
+  }
+
+  
+}
+.info-label {
+    display: grid;
+    margin-top: 2px;
+    color: rgb(238, 47, 255);
+    font-size: 32px;
+    font-weight: bold;
+  }
