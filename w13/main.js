@@ -11,7 +11,7 @@ const startExercise = (moveType, amountRep, restTime) => {
       stopMessage.textContent = `Stop ${moveType}`;
       output.appendChild(stopMessage);
       resolve();
-    }, restTime * 60000);
+    }, restTime * 600);
   });
 };
 
