@@ -1,16 +1,16 @@
-function renderPhotos(photos) {
-    photos.forEach((img) => {
+function renderPosts(posts) {
+    posts.forEach((img) => {
         const imgEl = document.createElement("img");
         imgEl.setAttribute("src", img.thumbnailUrl);
         document.getElementById("output").appendChild(imgEl);
     });
 };
 
-async function getPhotos() {
+async function getPosts() {
     try {
-      const response = await fetch("https://jsonplaceholder.typicode.com/photos");
+      const response = await fetch(" https://jsonplaceholder.typicode.com/posts");
       const data = await response.json();
-      if (!data.length) {
+      if (response.status === 200) {
         console.log("Success", data);
       } else {
         onSuccess(data);
@@ -21,11 +21,11 @@ async function getPhotos() {
   }
 
 async function start() {
-    getPhotos()
+    getPosts()
 }
 
-function onSuccess(photos) {
-    renderPhotos(photos)
+function onSuccess(Posts) {
+    renderPosts(Posts)
 }
 
 function onError(error) {
