@@ -4,6 +4,7 @@ import {getLS, saveLS} from "./storage.js"
 const renderTblHeading = function() {
   TBL.innerHTML = "";
   const table = document.createElement("table");
+  table.setAttribute("id", "table-id")
   const thead = document.createElement("thead");
   const tr = document.createElement("tr");
   const headingTextArr = [
@@ -73,21 +74,29 @@ const renderTblRow = function(data) {
 }
 
 
-const addRow = (tableID) => {
-  let tableRef = document.getElementById(tableID)
-  let newRow = tableRef.insertRow(0)
+const calculateAvg = (data) => {
+  const reduceTotal = data.reduce ((sum, ea) => sum + ea.total, 0)
+  const tableRef = document.getElementById("table-id")
+  let newRow = tableRef.insertRow(-1)
   let newCell = newRow.insertCell(0)
-  let newText = document.createTextNode("Average")
+  let newCell_1 = newRow.insertCell(0)
+  let newCell_2 = newRow.insertCell(0)
+  let newCell_3 = newRow.insertCell(0)
+  let newCell_4 = newRow.insertCell(0)
+  let newLabl = document.createTextNode(`Average Food`)
+  let newText = document.createTextNode(`${Math.floor(reduceTotal/data.length)}`)
+  newCell_1.appendChild(newLabl);
   newCell.appendChild(newText);
 }
 
 const renderTbl = function(data) {
   TBL.innerHTML = "";
-  if (data.length !== 0) { //MDN  and chat helped with this one, although I did get stuck when I put === instead -f !== the code would not run. 
+  if (data.length !== 0) {
     const table = renderTblHeading();
     const tbody = renderTblRow(data);
     table.appendChild(tbody);
     TBL.appendChild(table);
+    calculateAvg(data);
   }
 }
 
