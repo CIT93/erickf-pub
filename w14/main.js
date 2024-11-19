@@ -6,11 +6,11 @@ function renderPosts(posts) {
     });
 };
 
-async function getPosts() {
+const getPosts = async () => {
     try {
       const response = await fetch(" https://jsonplaceholder.typicode.com/posts");
       const data = await response.json();
-      if (response.status === 200) {
+      if (data.length) {
         console.log("Success", data);
       } else {
         onSuccess(data);
@@ -20,15 +20,15 @@ async function getPosts() {
     }
   }
 
-async function start() {
+const start = async () => {
     getPosts()
 }
 
-function onSuccess(Posts) {
+const onSuccess = async (Posts) => {
     renderPosts(Posts)
 }
 
-function onError(error) {
+const onError = async (error) => {
     console.log("Error", error)
 }
 
