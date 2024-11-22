@@ -49,7 +49,8 @@ const renderTblBtn = function(obj, index, data) {
     FORM[4].value = data[index].houseSize
     FORM[5].value = data[index].lifestyleChoice;
     FORM[6].value = data[index].foodSource
-    FORM[7].value = data[index].waterConsumptionPoints.toString()
+    FORM[7].value = data[index].waterConsumptionPoints
+    FORM[8].value = data[index].purchases
     onUpdate(index, data);
   });
   return td;
@@ -83,7 +84,7 @@ const calculateAvg = (data) => {
   let newTD_2 = newTR.insertCell(0)
 //   let newTD_3 = newTR.insertCell(0)
 //   let newTD_4 = newTR.insertCell(0)
-  let newLabl = document.createTextNode(`Average Food`)
+  let newLabl = document.createTextNode(`Average Total`)
   let newText = document.createTextNode(`${Math.floor(reduceTotal/data.length)}`)
   newTD_1.appendChild(newLabl);
   newTD.appendChild(newText);

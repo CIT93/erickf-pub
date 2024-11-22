@@ -34,7 +34,8 @@ FORM.addEventListener("submit", function (e) {
       e.target.houses.value,
       e.target.food.value,
       e.target.foodSource.value,
-      parseInt(e.target.waterConsumption.value)
+      parseInt(e.target.waterConsumption.value),
+      parseInt(e.target.purchase.value)
     );
     cfpData.push(fpObj);
     saveLS(cfpData);

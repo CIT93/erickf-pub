@@ -6,7 +6,8 @@ class FP {
       houseSize,
       lifestyleChoice,
       foodSource,
-      waterConsumption
+      waterConsumption,
+      purchase
     ) {
       this.first = first;
       this.houseMembers = houseMembers;
@@ -15,6 +16,7 @@ class FP {
       this.last = last;
       this.foodSource = foodSource;
       this.waterConsumptionPoints = waterConsumption;
+      this.purchasePoints = purchase
   
       this.calHouseHoldPoints();
       this.calHouseSizePoints();
@@ -80,6 +82,9 @@ class FP {
         this.foodSourcePoints = 2;
       }
     }
+
+    
+
   
     
   
@@ -89,7 +94,8 @@ class FP {
         this.houseSizePoints +
         this.lifestyleChoicePoints +
         this.foodSourcePoints +
-        this.waterConsumptionPoints
+        this.waterConsumptionPoints +
+        this.purchasePoints
     }
   }
   
