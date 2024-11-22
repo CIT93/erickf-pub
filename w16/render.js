@@ -50,7 +50,7 @@ const renderTblBtn = function(obj, index, data) {
     FORM[5].value = data[index].lifestyleChoice;
     FORM[6].value = data[index].foodSource
     FORM[7].value = data[index].waterConsumptionPoints
-    FORM[8].value = data[index].purchases
+    FORM[8].value = data[index].purchasePoints
     onUpdate(index, data);
   });
   return td;
