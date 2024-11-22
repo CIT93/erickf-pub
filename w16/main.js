@@ -1,12 +1,12 @@
 import { renderTbl } from "./render.js";
 import { FORM, FNAME, LNAME, SUBMIT } from "./global.js";
 import { saveLS, cfpData } from "./storage.js";
-import {FP} from "./fp.js"
+import { FP } from "./fp.js";
 
 const start = function (houseHoldMembers, houseSize, lifestyleChoice) {
   const houseHoldPoints = houseHoldMembers;
-  const houseSizePoints = houseSize
-  const lifestyleChoicePoints = lifestyleChoice
+  const houseSizePoints = houseSize;
+  const lifestyleChoicePoints = lifestyleChoice;
   const firstName = FORM.firstName.value;
   const lastName = FORM.lastName.value;
   const total = houseHoldPoints + houseSizePoints + lifestyleChoicePoints;
@@ -27,7 +27,15 @@ FORM.addEventListener("submit", function (e) {
   e.preventDefault();
   if (FNAME.value !== "" && LNAME.value !== "") {
     SUBMIT.textContent = "";
-   const fpObj = new FP (FNAME.value, LNAME.value, parseInt(FORM.houseHoldMembers.value), FORM.houses.value, FORM.food.value)
+    const fpObj = new FP(
+      FNAME.value,
+      LNAME.value,
+      parseInt(e.target.houseHoldMembers.value),
+      e.target.houses.value,
+      e.target.food.value,
+      e.target.foodSource.value,
+      parseInt(e.target.waterConsumption.value)
+    );
     cfpData.push(fpObj);
     saveLS(cfpData);
     renderTbl(cfpData);
@@ -55,4 +63,3 @@ FNAME.addEventListener("blur", validateField);
 LNAME.addEventListener("blur", validateField);
 
 renderTbl(cfpData);
-
