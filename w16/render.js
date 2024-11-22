@@ -55,7 +55,7 @@ const renderTblBtn = function(obj, index, data) {
   });
   return td;
 }
-
+//
 const renderTblRow = function(data) {
   const tbody = document.createElement("tbody");
   data.forEach(function (obj, index) {
