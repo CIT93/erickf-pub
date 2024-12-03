@@ -49,14 +49,15 @@ const renderTblBtn = function(obj, index, data) {
     FORM[4].value = data[index].houseSize
     FORM[5].value = data[index].lifestyleChoice;
     FORM[6].value = data[index].foodSource
-    FORM[7].value = data[index].waterValue
-    FORM[8].value = data[index]
-    FORM[9].value = data[index].purchasePoints
+    FORM[7].value = data[index].waterConsumptionPoints
+    FORM[8].value = data[index].purchasePoints
+    FORM[9].value = data[index].wastePoints
+    FORM[10].value = data[index].recyclePoints
     onUpdate(index, data);
   });
   return td;
 }
-//
+
 const renderTblRow = function(data) {
   const tbody = document.createElement("tbody");
   data.forEach(function (obj, index) {
@@ -106,8 +107,5 @@ const dataLS = function() {
   const data = getLS()
   renderTbl(data)
 }
-
-
-
 
 export { renderTbl, renderTblHeading };

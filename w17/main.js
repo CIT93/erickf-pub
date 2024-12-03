@@ -1,5 +1,5 @@
 import { renderTbl } from "./render.js";
-import { FORM, FNAME, LNAME, SUBMIT, WATER, BOTH } from "./global.js";
+import { FORM, FNAME, LNAME, SUBMIT } from "./global.js";
 import { saveLS, cfpData } from "./storage.js";
 import { FP } from "./fp.js";
 
@@ -35,8 +35,9 @@ FORM.addEventListener("submit", function (e) {
       e.target.food.value,
       e.target.foodSource.value,
       parseInt(e.target.waterConsumption.value),
-      e.target.dish_washer.checked ? parseInt(e.target.waterConsumption.value) * 2 : parseInt(e.target.waterConsumption.value),
-      parseInt(e.target.purchase.value)
+      parseInt(e.target.purchase.value),
+      parseInt(e.target.waste.value),
+      parseInt(e.target.recycle.value)
     );
     cfpData.push(fpObj);
     saveLS(cfpData);

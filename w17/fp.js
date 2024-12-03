@@ -7,9 +7,9 @@ class FP {
       lifestyleChoice,
       foodSource,
       waterConsumption,
-      water, 
-      waterValue,
-      purchase
+      purchase,
+      waste,
+      recycle
     ) {
       this.first = first;
       this.houseMembers = houseMembers;
@@ -17,16 +17,14 @@ class FP {
       this.lifestyleChoice = lifestyleChoice;
       this.last = last;
       this.foodSource = foodSource;
-      this.waterValue = waterValue
       this.waterConsumptionPoints = waterConsumption;
-      this.both = both;
       this.purchasePoints = purchase
-
+      this.wastePoints = waste
+      this.recyclePoints = recycle
       this.calHouseHoldPoints();
       this.calHouseSizePoints();
       this.calFoodSourcePoints();
       this.calLifestyleChoicePoints();
-    
       this.calTotal();
     }
     calHouseHoldPoints() {
@@ -80,10 +78,8 @@ class FP {
         this.foodSourcePoints = 12;
       } else if (this.foodSource === "Balance of Fresh and Convenience Food") {
         this.foodSourcePoints = 6;
-      } else if (
-        this.foodSource === "Only Eat Fresh Locally Grown Food, or Hunted Food"
-      ) {
-        this.foodSourcePoints = 2;
+      } else if (this.foodSource === "Only Eat Fresh Locally Grown Food, or Hunted Food"
+      ) { this.foodSourcePoints = 2;
       }
     }
 
@@ -99,7 +95,9 @@ class FP {
         this.lifestyleChoicePoints +
         this.foodSourcePoints +
         this.waterConsumptionPoints +
-        this.purchasePoints
+        this.purchasePoints + 
+        this.wastePoints +
+        this.recyclePoints
     }
   }
   
