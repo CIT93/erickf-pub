@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="module" defer src="main.js"></script>
+    <title>Ordering Menu - Final Step</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Welcome to Our Ordering Menu</h1>
+        <p>Please choose your meal preferences below to place your order!</p>
+    </header>
+    <form id="form">
+        <fieldset>
+            <Legend> Menu </Legend>
+            <div>
+                <label>Type of Meat</label>
+                <select name="meatType" required>
+                    <option value="">--Please Choose an Option---</option>
+                    <option value="CHICKEN">Chicken</option>
+                    <option value="STEAK">Steak</option>
+                    <option value="SHRIMP">Shrimp</option>
+                </select>
+            </div>
+            <div>
+                <label>Type of Rice</label>
+                <select name="riceType" required>
+                    <option value="">--Please Choose an Option---</option>
+                    <option value="FRIEDRICE">Fried Rice</option>
+                    <option value="STEAMRICE">Steam Rice</option>
+                </select>
+            </div>
+            <div>
+                <label>Scheduled Pick-Up Time</label>
+                <input type="time" id="pickupTime" name="pickupTime">
+                </select>
+            </div>
+            <button type="submit">Submit</button>
+        </fieldset>
+    </form>
+    <div id="output"></div>
+    <div id="table"></div>
+</body>
+
+</html>
