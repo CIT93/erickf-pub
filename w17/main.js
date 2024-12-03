@@ -37,7 +37,10 @@ FORM.addEventListener("submit", function (e) {
       parseInt(e.target.waterConsumption.value),
       parseInt(e.target.purchase.value),
       parseInt(e.target.waste.value),
-      parseInt(e.target.recycle.value)
+      parseInt(e.target.recycle.value),
+      parseInt(e.target.miles.value),
+      parseInt(e.target.public.value),
+      parseInt(e.target.flight.value)
     );
     cfpData.push(fpObj);
     saveLS(cfpData);

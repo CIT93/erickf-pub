@@ -53,6 +53,10 @@ const renderTblBtn = function(obj, index, data) {
     FORM[8].value = data[index].purchasePoints
     FORM[9].value = data[index].wastePoints
     FORM[10].value = data[index].recyclePoints
+    FORM[11].value = data[index].milesPoints
+    FORM[12].value = data[index].publicPoints
+    FORM[11].value = data[index].milesPoints
+
     onUpdate(index, data);
   });
   return td;

@@ -9,7 +9,10 @@ class FP {
       waterConsumption,
       purchase,
       waste,
-      recycle
+      recycle,
+      miles,
+      public,
+      flight
     ) {
       this.first = first;
       this.houseMembers = houseMembers;
@@ -21,6 +24,9 @@ class FP {
       this.purchasePoints = purchase
       this.wastePoints = waste
       this.recyclePoints = recycle
+      this.milesPoints = miles
+      this.publicPoints = public
+      this.flightPoints = flight
       this.calHouseHoldPoints();
       this.calHouseSizePoints();
       this.calFoodSourcePoints();
@@ -97,7 +103,10 @@ class FP {
         this.waterConsumptionPoints +
         this.purchasePoints + 
         this.wastePoints +
-        this.recyclePoints
+        this.recyclePoints + 
+        this.milesPoints +
+        this.publicPoints +
+        this.flightPoints
     }
   }
   
